@@ -1,0 +1,78 @@
+<div *ngIf="!expenses" class="flex-container">
+    <mat-spinner></mat-spinner>
+</div>
+
+<div [hidden]="!expenses"> 
+    <div class="mat-elevation-z8">
+        <table mat-table [dataSource]="dataSource ">
+
+            <ng-container matColumnDef="position">
+                <th mat-header-cell *matHeaderCellDef> No. </th>
+                <td mat-cell *matCellDef="let data "> {{dataSource.filteredData.indexOf(data)+1}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="employer">
+                <th mat-header-cell *matHeaderCellDef> Employer </th>
+                <td mat-cell *matCellDef="let data"> {{data.accountName}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="employee">
+                <th mat-header-cell *matHeaderCellDef> Employee </th>
+                <td mat-cell *matCellDef="let data"> {{data.contactFullName}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="project">
+                <th mat-header-cell *matHeaderCellDef> Project </th>
+                <td mat-cell *matCellDef="let data"> {{data.project}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="date">
+                <th mat-header-cell *matHeaderCellDef> Date </th>
+                <td mat-cell *matCellDef="let data"> {{data.date}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="spent">
+                <th mat-header-cell *matHeaderCellDef> Spent </th>
+                <td mat-cell *matCellDef="let data"> {{data.spent}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="vat">
+                <th mat-header-cell *matHeaderCellDef> Vat (21%) </th>
+                <td mat-cell *matCellDef="let data"> {{data.vat}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="total">
+                <th mat-header-cell *matHeaderCellDef> Total </th>
+                <td mat-cell *matCellDef="let data"> {{data.total}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="coment">
+                <th class="w-400" mat-header-cell *matHeaderCellDef> Comment </th>
+                <td mat-cell *matCellDef="let data"> {{data.comment}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="buttons" >
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td class="w-175" mat-cell *matCellDef="let data">
+                    <button mat-raised-button color="accent" (click)=updateExpense(dataSource.filteredData.indexOf(data))>Update</button>
+                    <span class="examole-spac"></span>
+                    <button mat-raised-button color="accent" (click)=deleteExpense(dataSource.filteredData.indexOf(data))>Delete</button>
+                </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+
+        <div class="create-but-container">
+            <button mat-raised-button color="accent" class="create-but" (click)="createExpense()">Create</button>
+        </div>
+
+        <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+    </div>
+</div>
+<!-- <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator> -->
+<!-- asdasd
+{{expenses | json}} -->
+<!-- <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+<tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr> -->

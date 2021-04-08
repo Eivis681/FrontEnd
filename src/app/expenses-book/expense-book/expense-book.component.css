@@ -1,0 +1,44 @@
+table {
+    width: 100%;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: stretch;
+  align-items: center;
+  margin-top: 200px;
+}
+
+.examole-spac {
+  margin-left: 10px;
+}
+.create-but-container {
+  display: flex;
+  justify-content: flex-end;
+}
+.create-but{
+  width: 150px;
+  margin-right: 40px;
+  margin-top: 5px;
+}
+.table-but {
+  display: flex;
+  justify-content: flex-end;
+}
+.updateDelete-but{
+  margin-right: 0px;
+}
+.w-175{
+  width: 170px;
+}
+.w-400{
+  width: 400px;
+}
+
+/* margin-left: 10px;
+    margin-left: 1360px;
+    width: 150px;
+    margin-top: 10px; */

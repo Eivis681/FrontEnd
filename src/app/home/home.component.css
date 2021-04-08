@@ -1,0 +1,17 @@
+.example-spacer {
+    flex: 1 2 auto;
+  }
+.examole-spac {
+    margin-left: 30px;
+}
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 130px;
+    }
+.flex-item{
+    
+    align-content: flex-start;
+}

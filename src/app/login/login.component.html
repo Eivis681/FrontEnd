@@ -1,0 +1,12 @@
+
+<form [formGroup]="loginControl" class="flex-container">
+<mat-form-field appearance="fill" class="flex-item">
+    <mat-label>Email</mat-label>
+    <input type="email" formControlName="email" matInput email> 
+</mat-form-field>
+<mat-form-field appearance="fill" class="flex-item" >
+    <mat-label>Password</mat-label>
+    <input formControlName="password" matInput type="password">
+</mat-form-field>
+<button mat-raised-button color="primary" class="flex-login" (click)="loginUser()">Login</button> 
+</form>

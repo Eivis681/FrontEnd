@@ -1,0 +1,12 @@
+<mat-toolbar color="primary">
+    <span>Expense Book</span>
+
+    <span class="examole-spac"></span>
+    <button mat-raised-button color="accent"  routerLink="/welcome">Home</button>
+    <span class="examole-spac"></span>
+    <button mat-raised-button color="accent" routerLink="/expense">Expenses</button>
+    <span class="example-spacer"></span>
+    <button *ngIf="!logedIn" mat-raised-button color="accent" routerLink="/login" >Login</button>
+    <h2 *ngIf="logedIn" class="text-format">Hello {{userEmail}}</h2>
+    <button *ngIf="logedIn" mat-raised-button color="accent" routerLink="/welcome" (click)="logOut()">Logout</button> 
+  </mat-toolbar> 
